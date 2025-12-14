@@ -1,0 +1,21 @@
+Time resolution is 1 ps
+dmem[00000000] = xxxxxxxx
+dmem[00000001] = xxxxxxxx
+dmem[00000002] = xxxxxxxx
+dmem[00000003] = xxxxxxxx
+Control signals OK
+dmem[00000000] = 01010101
+dmem[00000001] = xxxxxxxx
+dmem[00000002] = xxxxxxxx
+dmem[00000003] = xxxxxxxx
+Control signals OK
+dmem[00000000] = 01010101
+dmem[00000001] = 12121212
+dmem[00000002] = xxxxxxxx
+dmem[00000003] = xxxxxxxx
+Control signals OK
+dmem[00000000] = 01010101
+dmem[00000001] = 12121212
+dmem[00000002] = 23232323
+dmem[00000003] = xxxxxxxx
+$finish called at time : 81 ns : File "C:/Users/fallo/Desktop/CECS 440/Lab 8/Lab_8/Lab_8.srcs/sim_1/new/t_MEM_Stage.v" Line 54
