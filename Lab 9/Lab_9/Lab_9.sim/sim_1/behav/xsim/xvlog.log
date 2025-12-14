@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sources_1/new/IF_Stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_Stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sources_1/new/adder32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder32
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sources_1/new/imem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sources_1/new/mux2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sources_1/new/register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module register
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sim_1/new/t_IF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_IF

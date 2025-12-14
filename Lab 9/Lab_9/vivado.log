@@ -1,0 +1,151 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Nov 17 18:55:59 2025
+# Process ID         : 29572
+# Current directory  : C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent17964 C:\Users\fallo\Desktop\CECS 440\Lab 9\Lab_9\Lab_9.xpr
+# Log file           : C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/vivado.log
+# Journal file       : C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9\vivado.jou
+# Running On         : S340
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : AMD Ryzen 7 7800X3D 8-Core Processor           
+# CPU Frequency      : 4192 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33411 MB
+# Swap memory        : 16106 MB
+# Total Virtual      : 49517 MB
+# Available Virtual  : 33948 MB
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.xpr}
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at E:/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at E:/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at E:/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Vivado/2024.2/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 1603.590 ; gain = 355.816
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 't_IF'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 't_IF' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj t_IF_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sources_1/new/IF_Stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_Stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sources_1/new/adder32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder32
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sources_1/new/imem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sources_1/new/mux2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sources_1/new/register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module register
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sim_1/new/t_IF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_IF
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot t_IF_behav xil_defaultlib.t_IF xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot t_IF_behav xil_defaultlib.t_IF xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'd' [C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sources_1/new/IF_Stage.v:18]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.register
+Compiling module xil_defaultlib.adder32
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.IF_Stage
+Compiling module xil_defaultlib.t_IF
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot t_IF_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "t_IF_behav -key {Behavioral:sim_1:Functional:t_IF} -tclbatch {t_IF.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source t_IF.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Test Case           0
+pcsrc = 0	pcbranch = 42f24185
+pc = 00000004	instr = c0895e81
+pcnext=00000008	 reset=0
+Test Case           1
+pcsrc = 0	pcbranch = 27f2554f
+pc = 00000008	instr = 8484d609
+pcnext=0000000c	 reset=0
+Test Case           2
+pcsrc = 1	pcbranch = 9dcc603b
+pc = 0000003b	instr = 7cfde9f9
+pcnext=9dcc603b	 reset=0
+Test Case           3
+pcsrc = 0	pcbranch = 1d06333a
+pc = 0000003f	instr = e33724c6
+pcnext=00000043	 reset=0
+Test Case           4
+pcsrc = 1	pcbranch = bf23327e
+pc = 0000007e	instr = 0573870a
+pcnext=bf23327e	 reset=0
+Test Case           5
+pcsrc = 0	pcbranch = 0aaa4b15
+pc = 00000082	instr = c03b2280
+pcnext=00000086	 reset=0
+Test Case           6
+pcsrc = 0	pcbranch = 78d99bf1
+pc = 00000086	instr = 10642120
+pcnext=0000008a	 reset=0
+Test Case           7
+pcsrc = 0	pcbranch = 6c9c4bd9
+pc = 0000008a	instr = 557845aa
+pcnext=0000008e	 reset=0
+Test Case           8
+pcsrc = 0	pcbranch = 31230762
+pc = 0000008e	instr = cecccc9d
+pcnext=00000092	 reset=0
+Test Case           9
+pcsrc = 0	pcbranch = 2635fb4c
+pc = 00000092	instr = cb203e96
+pcnext=00000096	 reset=0
+$finish called at time : 112 ns : File "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sim_1/new/t_IF.v" Line 28
+INFO: [USF-XSim-96] XSim completed. Design snapshot 't_IF_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1653.637 ; gain = 28.969
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 17 18:58:54 2025...

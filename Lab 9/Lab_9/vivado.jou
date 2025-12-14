@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Nov 17 18:55:59 2025
+# Process ID         : 29572
+# Current directory  : C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent17964 C:\Users\fallo\Desktop\CECS 440\Lab 9\Lab_9\Lab_9.xpr
+# Log file           : C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/vivado.log
+# Journal file       : C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9\vivado.jou
+# Running On         : S340
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : AMD Ryzen 7 7800X3D 8-Core Processor           
+# CPU Frequency      : 4192 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33411 MB
+# Swap memory        : 16106 MB
+# Total Virtual      : 49517 MB
+# Available Virtual  : 33948 MB
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+source t_IF.tcl
+close_sim

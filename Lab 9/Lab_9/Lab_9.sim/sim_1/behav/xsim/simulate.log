@@ -1,0 +1,42 @@
+Time resolution is 1 ps
+Test Case           0
+pcsrc = 0	pcbranch = 42f24185
+pc = 00000004	instr = c0895e81
+pcnext=00000008	 reset=0
+Test Case           1
+pcsrc = 0	pcbranch = 27f2554f
+pc = 00000008	instr = 8484d609
+pcnext=0000000c	 reset=0
+Test Case           2
+pcsrc = 1	pcbranch = 9dcc603b
+pc = 0000003b	instr = 7cfde9f9
+pcnext=9dcc603b	 reset=0
+Test Case           3
+pcsrc = 0	pcbranch = 1d06333a
+pc = 0000003f	instr = e33724c6
+pcnext=00000043	 reset=0
+Test Case           4
+pcsrc = 1	pcbranch = bf23327e
+pc = 0000007e	instr = 0573870a
+pcnext=bf23327e	 reset=0
+Test Case           5
+pcsrc = 0	pcbranch = 0aaa4b15
+pc = 00000082	instr = c03b2280
+pcnext=00000086	 reset=0
+Test Case           6
+pcsrc = 0	pcbranch = 78d99bf1
+pc = 00000086	instr = 10642120
+pcnext=0000008a	 reset=0
+Test Case           7
+pcsrc = 0	pcbranch = 6c9c4bd9
+pc = 0000008a	instr = 557845aa
+pcnext=0000008e	 reset=0
+Test Case           8
+pcsrc = 0	pcbranch = 31230762
+pc = 0000008e	instr = cecccc9d
+pcnext=00000092	 reset=0
+Test Case           9
+pcsrc = 0	pcbranch = 2635fb4c
+pc = 00000092	instr = cb203e96
+pcnext=00000096	 reset=0
+$finish called at time : 112 ns : File "C:/Users/fallo/Desktop/CECS 440/Lab 9/Lab_9/Lab_9.srcs/sim_1/new/t_IF.v" Line 28
