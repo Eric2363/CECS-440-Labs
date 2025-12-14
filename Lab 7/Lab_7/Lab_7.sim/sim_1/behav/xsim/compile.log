@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.srcs/sources_1/new/WB_Stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux
+INFO: [VRFC 10-311] analyzing module WB_Stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.srcs/sources_1/new/mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'mux' [C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.srcs/sources_1/new/mux.v:9]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.srcs/sim_1/new/t_WB_Stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_WB_Stage

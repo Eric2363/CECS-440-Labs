@@ -1,0 +1,32 @@
+Time resolution is 1 ps
+Test Case           0
+aluoutw = 12153524	readdata = c0895e81
+memtoregm = 0	resultw = 12153524
+regwritem = 1	regwritew = 1
+writeregm = 04	writeregw = 04
+
+Test Case           1
+aluoutw = b1f05663	readdata = 06b97b0d
+memtoregm = 1	resultw = 06b97b0d
+regwritem = 1	regwritew = 1
+writeregm = 06	writeregw = 06
+
+Test Case           2
+aluoutw = b2c28465	readdata = 89375212
+memtoregm = 0	resultw = b2c28465
+regwritem = 1	regwritew = 1
+writeregm = 00	writeregw = 00
+
+Test Case           3
+aluoutw = 06d7cd0d	readdata = 3b23f176
+memtoregm = 1	resultw = 3b23f176
+regwritem = 1	regwritew = 1
+writeregm = 1e	writeregw = 1e
+
+Test Case           4
+aluoutw = 76d457ed	readdata = 462df78c
+memtoregm = 0	resultw = 76d457ed
+regwritem = 1	regwritew = 1
+writeregm = 1c	writeregw = 1c
+
+$finish called at time : 6 ns : File "C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.srcs/sim_1/new/t_WB_Stage.v" Line 37

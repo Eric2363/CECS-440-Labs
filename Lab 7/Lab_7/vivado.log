@@ -1,0 +1,133 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu Nov  6 07:40:56 2025
+# Process ID         : 14968
+# Current directory  : C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent21280 C:\Users\fallo\Desktop\CECS 440\Lab 7\Lab_7\Lab_7.xpr
+# Log file           : C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/vivado.log
+# Journal file       : C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7\vivado.jou
+# Running On         : S340
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : AMD Ryzen 7 7800X3D 8-Core Processor           
+# CPU Frequency      : 4192 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33411 MB
+# Swap memory        : 14495 MB
+# Total Virtual      : 47907 MB
+# Available Virtual  : 28276 MB
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.xpr}
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at E:/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at E:/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at E:/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Vivado/2024.2/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 1601.121 ; gain = 354.344
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 't_WB_Stage'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 't_WB_Stage' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj t_WB_Stage_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.srcs/sources_1/new/WB_Stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux
+INFO: [VRFC 10-311] analyzing module WB_Stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.srcs/sources_1/new/mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'mux' [C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.srcs/sources_1/new/mux.v:9]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.srcs/sim_1/new/t_WB_Stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_WB_Stage
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot t_WB_Stage_behav xil_defaultlib.t_WB_Stage xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot t_WB_Stage_behav xil_defaultlib.t_WB_Stage xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.mux(WIDTH=32)
+Compiling module xil_defaultlib.WB_Stage
+Compiling module xil_defaultlib.t_WB_Stage
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot t_WB_Stage_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "t_WB_Stage_behav -key {Behavioral:sim_1:Functional:t_WB_Stage} -tclbatch {t_WB_Stage.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source t_WB_Stage.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Test Case           0
+aluoutw = 12153524	readdata = c0895e81
+memtoregm = 0	resultw = 12153524
+regwritem = 1	regwritew = 1
+writeregm = 04	writeregw = 04
+
+Test Case           1
+aluoutw = b1f05663	readdata = 06b97b0d
+memtoregm = 1	resultw = 06b97b0d
+regwritem = 1	regwritew = 1
+writeregm = 06	writeregw = 06
+
+Test Case           2
+aluoutw = b2c28465	readdata = 89375212
+memtoregm = 0	resultw = b2c28465
+regwritem = 1	regwritew = 1
+writeregm = 00	writeregw = 00
+
+Test Case           3
+aluoutw = 06d7cd0d	readdata = 3b23f176
+memtoregm = 1	resultw = 3b23f176
+regwritem = 1	regwritew = 1
+writeregm = 1e	writeregw = 1e
+
+Test Case           4
+aluoutw = 76d457ed	readdata = 462df78c
+memtoregm = 0	resultw = 76d457ed
+regwritem = 1	regwritew = 1
+writeregm = 1c	writeregw = 1c
+
+$finish called at time : 6 ns : File "C:/Users/fallo/Desktop/CECS 440/Lab 7/Lab_7/Lab_7.srcs/sim_1/new/t_WB_Stage.v" Line 37
+INFO: [USF-XSim-96] XSim completed. Design snapshot 't_WB_Stage_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1649.055 ; gain = 10.590
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  6 08:42:27 2025...
