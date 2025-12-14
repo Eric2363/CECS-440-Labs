@@ -1,0 +1,21 @@
+Time resolution is 1 ps
+Testing R-Type instructions
+0000110010
+0000110110
+0000110000
+0000110001
+0000110111
+LW
+1001010010
+SW
+0101000010
+BEQ - branch taken
+0010000110
+BEQ - branch NOT taken
+0000000110
+ADDI
+0001010010
+J
+0000001010
+END SIMULATION!
+$finish called at time : 11 ns : File "C:/Users/fallo/Desktop/CECS 440/Lab 6/Lab_6/Lab_6.srcs/sim_1/new/t_controller.v" Line 61
