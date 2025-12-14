@@ -1,0 +1,14 @@
+Time resolution is 1 ps
+ALU is performing AND
+aluoutE = 00001010
+ALU is performing OR
+aluoutE = 00003636
+ALU is performing ADD
+aluoutE = 00004646
+ALU Operation is invalid
+aluoutE = xxxxxxxx
+ALU is performing SUB
+aluoutE = ffffddde
+ALU is performing SLT
+aluoutE = 00000001
+$finish called at time : 16 ns : File "C:/Users/fallo/Desktop/CECS 440/Lab 10/Lab_10/Lab_10.srcs/sim_1/new/t_EX_Stage.v" Line 38

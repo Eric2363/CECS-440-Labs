@@ -1,0 +1,216 @@
+//////////////////////////////////////////////////////////////////////////////////
+`timescale 1ns / 1ps
+// Lab 10
+// Engineer: Eric Santana
+// ID: 015107467
+    
+
+module sl2(a, y);
+    input  [31:0] a;
+    output [31:0] y;
+
+    // shift left by 2 (append two zeros)
+    assign y = {a[29:0], 2'b00};
+
+endmodule
+
+//////////////////////////////////////////////////////////////////////////////////
+`timescale 1ns / 1ps
+// Lab 10
+// Engineer: Eric Santana
+// ID: 015107467
+ 
+module alu(srca, srcb, alucontrol, aluout, zero);
+    input  [31:0] srca, srcb;
+    input  [2:0]  alucontrol;
+    output [31:0] aluout;
+    output        zero;
+
+    assign aluout = (alucontrol == 0) ? (srca & srcb) :      // AND
+                    (alucontrol == 1) ? (srca | srcb) :      // OR
+                    (alucontrol == 2) ? (srca + srcb) :      // ADD
+                    (alucontrol == 6) ? (srca - srcb) :      // SUB
+                    (alucontrol == 7) ? (srca < srcb) :      // SLT
+                    32'hx;                                   // default
+
+    assign zero = (aluout == 0);
+
+endmodule
+
+//////////////////////////////////////////////////////////////////////////////////
+`timescale 1ns / 1ps
+// Lab 10
+// Engineer: Eric Santana
+// ID: 015107467
+ 
+
+module EX_Stage(
+    regwriteD,
+    memtoregD,
+    memwriteD,
+    branchD,
+    alucontrolE,
+    alusrcE,
+    regdstE,
+    srcaE,
+    writedataD,
+    rtE,
+    rdE,
+    signimmE,
+    pcplus4E,
+
+    regwriteE,
+    memtoregE,
+    memwriteE,
+    branchE,
+    zeroE,
+    aluoutE,
+    writedataE,
+    writeregE,
+    pcbranchE
+    );
+
+    input        regwriteD, memtoregD, memwriteD, branchD;
+    input [2:0]  alucontrolE;
+    input        alusrcE, regdstE;
+    input [31:0] srcaE, writedataD, signimmE, pcplus4E;
+    input [4:0]  rtE, rdE;
+
+    output       regwriteE, memtoregE, memwriteE, branchE, zeroE;
+    output [31:0] aluoutE, writedataE, pcbranchE;
+    output [4:0]  writeregE;
+
+    wire [31:0] srcbE, signimmshE;
+
+    
+    assign regwriteE = regwriteD;
+    assign memtoregE = memtoregD;
+    assign memwriteE = memwriteD;
+    assign branchE   = branchD;
+    assign writedataE = writedataD;
+
+   
+    alu alu(
+        .srca(srcaE),
+        .srcb(srcbE),
+        .alucontrol(alucontrolE),
+        .aluout(aluoutE),
+        .zero(zeroE)
+    );
+
+    
+    mux2 #(32) srcbmux(
+        .d0(writedataD),
+        .d1(signimmE),
+        .s(alusrcE),
+        .y(srcbE)
+    );
+
+   
+    mux2 #(5) wrmux(
+        .d0(rtE),
+        .d1(rdE),
+        .s(regdstE),
+        .y(writeregE)
+    );
+
+   
+    sl2 immsh(
+        .a(signimmE),
+        .y(signimmshE)
+    );
+
+   
+    adder32 pcadd2(
+        .a(pcplus4E),
+        .b(signimmshE),
+        .y(pcbranchE)
+    );
+
+endmodule
+
+//////////////////////////////////////////////////////////////////////////////////
+`timescale 1ns / 1ps
+// Lab 10
+// Engineer: Eric Santana
+// ID: 015107467
+ 
+module t_EX_Stage;
+
+    reg regwriteD, memtoregD, memwriteD, branchD, alusrcE, regdstE;
+    reg [2:0] alucontrole;
+    reg [31:0] srcaE, writedataD, signimmE, pcplus4E;
+    reg [4:0] rtE, rdE;
+
+    wire regwriteE, memtoregE, memwriteE, branchE, zeroE;
+    wire [31:0] aluoutE, writedataE, pcbranchE;
+    wire [4:0] writeregE;
+
+    integer i;
+
+    EX_Stage dut(
+        regwriteD, memtoregD, memwriteD, branchD,
+        alucontrole, alusrcE, regdstE, srcaE,
+        writedataD, rtE, rdE, signimmE, pcplus4E,
+        regwriteE, memtoregE, memwriteE, branchE,
+        zeroE, aluoutE, writedataE, writeregE,
+        pcbranchE
+    );
+
+    initial begin
+        srcaE      = 32'h00001212;
+        writedataD = 32'h00003434;
+        signimmE   = 32'hffffffff;
+        pcplus4E   = 32'h44444444;
+
+        for (i = 0; i < 8; i = i + 1)
+            testcase;
+
+        #10 $finish;
+    end
+
+    task testcase;
+    begin
+        {regwriteD, memtoregD, memwriteD, branchD,
+         alusrcE, regdstE} = $random;
+
+        alucontrole = i;
+
+        case (alucontrole)
+            0: $display("ALU is performing AND");
+            1: $display("ALU is performing OR");
+            2: $display("ALU is performing ADD");
+            6: $display("ALU is performing SUB");
+            7: $display("ALU is performing SLT");
+            default: $display("ALU Operation is invalid");
+        endcase
+
+        #1 $display("aluoutE = %h", aluoutE);
+
+        if (zeroE != (!aluoutE))
+            $display("zero flag is malfunctioning");
+
+        // verify control signals propagate unchanged
+        if (regwriteE != regwriteD ||
+            memtoregE != memtoregD ||
+            memwriteE != memwriteD ||
+            branchE   != branchD   ||
+            writedataE != writedataD)
+        begin
+            $display("Control signals did not pass correctly!");
+            $finish;
+        end
+
+        // verify branch adder
+        if (pcbranchE != ((signimmE[29:0] << 2) + pcplus4E))
+        begin
+            $display("Branch Adder is malfunctioning");
+            $finish;
+        end
+
+        if (i == 3)
+            i = 5;
+    end
+    endtask
+
+endmodule
