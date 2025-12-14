@@ -1,0 +1,11 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:57
+C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,,,,,,,
+,,,,,,datapathTester,,,,,,,,
+C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/ALUout.v,1760589663,verilog,,C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/alu.v,,ALUout,,,,,,,,
+C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/alu.v,1760588562,verilog,,C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/design.v,,alu,,,,,,,,
+C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/aluout.v,1760587410,verilog,,C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/design.v,,aluout,,,,,,,,
+C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/design.v,1760587705,verilog,,C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v,C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v;C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/aluout.v;C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/alu.v;C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/ALUout.v,simple_datapath,,,,,,,,
+C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v,1760587447,verilog,,C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sim_1/new/testbench_skeleton.v,,regfile,,,,,,,,

@@ -1,0 +1,133 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Oct 15 19:23:45 2025
+# Process ID         : 7624
+# Current directory  : C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent5108 C:\Users\fallo\Desktop\CECS 440\Lab 5\Lab5\Lab5.xpr
+# Log file           : C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/vivado.log
+# Journal file       : C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5\vivado.jou
+# Running On         : S340
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : AMD Ryzen 7 7800X3D 8-Core Processor           
+# CPU Frequency      : 4192 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33411 MB
+# Swap memory        : 10737 MB
+# Total Virtual      : 44149 MB
+# Available Virtual  : 34723 MB
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+source datapathTester.tcl
+close_sim
+launch_simulation
+source datapathTester.tcl
+update_compile_order -fileset sources_1
+add_bp {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v} 25
+remove_bps -file {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v} -line 25
+add_bp {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v} 25
+remove_bps -file {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v} -line 25
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source datapathTester.tcl
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+source datapathTester.tcl
+run all
+update_compile_order -fileset sources_1
+run all
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+source datapathTester.tcl
+close_sim
+launch_simulation
+source datapathTester.tcl
+close_sim
+launch_simulation
+source datapathTester.tcl
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source datapathTester.tcl
+close_sim
+launch_simulation
+source datapathTester.tcl
+close_sim
+launch_simulation
+source datapathTester.tcl
+close_sim
+launch_simulation
+launch_simulation
+source datapathTester.tcl
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source datapathTester.tcl
+run all
+relaunch_sim
+export_ip_user_files -of_objects  [get_files {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/design.v}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/design.v}}
+update_compile_order -fileset sources_1
+add_files -norecurse {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/alu.v}}
+export_ip_user_files -of_objects  [get_files {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/aluout.v}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/aluout.v}}
+close [ open {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/ALUout.v} w ]
+add_files {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/ALUout.v}}
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source datapathTester.tcl
+export_ip_user_files -of_objects  [get_files {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sim_1/new/testbench_skeleton-lab5.v}}] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sim_1/new/testbench_skeleton-lab5.v}}
+close [ open {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/design.v} w ]
+add_files {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/design.v}}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sim_1/new/testbench_skeleton.v} w ]
+add_files -fileset sim_1 {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sim_1/new/testbench_skeleton.v}}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+close_sim
+launch_simulation
+source datapathTester.tcl
+close_sim
+launch_simulation
+source datapathTester.tcl
+save_wave_config {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/datapathTester_behav.wcfg}
+add_files -fileset sim_1 -norecurse {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/datapathTester_behav.wcfg}}
+set_property xsim.view {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/datapathTester_behav.wcfg}} [get_filesets sim_1]
+save_wave_config {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/datapathTester_behav.wcfg}
+save_wave_config {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/datapathTester_behav.wcfg}
+save_wave_config {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/datapathTester_behav.wcfg}
+synth_design -top simple_datapath -part xc7vx485tffg1157-1 -lint 
+synth_design -top simple_datapath -part xc7vx485tffg1157-1 -lint 
+synth_design -top simple_datapath -part xc7vx485tffg1157-1 -lint 
+synth_design -top simple_datapath -part xc7vx485tffg1157-1 -lint 
+synth_design -top simple_datapath -part xc7vx485tffg1157-1 -lint 
+synth_design -top simple_datapath -part xc7vx485tffg1157-1 -lint 
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_sim
+launch_simulation
+open_wave_config {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/datapathTester_behav.wcfg}
+source datapathTester.tcl
+remove_forces { {/datapathTester/i} }
+save_wave_config {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/datapathTester_behav.wcfg}
+save_wave_config {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/datapathTester_behav.wcfg}
+close_sim

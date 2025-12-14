@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="datapathTester_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="datapathTester" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="24.333 ns"></ZoomStartTime>
+      <ZoomEndTime time="170.334 ns"></ZoomEndTime>
+      <Cursor1Time time="146.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="296"></NameColumnWidth>
+      <ValueColumnWidth column_width="126"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/datapathTester/op_code" type="array">
+      <obj_property name="ElementShortName">op_code[2:0]</obj_property>
+      <obj_property name="ObjectShortName">op_code[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapathTester/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapathTester/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapathTester/rs" type="array">
+      <obj_property name="ElementShortName">rs[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapathTester/rt" type="array">
+      <obj_property name="ElementShortName">rt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapathTester/rd" type="array">
+      <obj_property name="ElementShortName">rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapathTester/wr_en" type="logic">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapathTester/d_in" type="array">
+      <obj_property name="ElementShortName">d_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">d_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapathTester/d_out" type="array">
+      <obj_property name="ElementShortName">d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapathTester/c" type="logic">
+      <obj_property name="ElementShortName">c</obj_property>
+      <obj_property name="ObjectShortName">c</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapathTester/n" type="logic">
+      <obj_property name="ElementShortName">n</obj_property>
+      <obj_property name="ObjectShortName">n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapathTester/z" type="logic">
+      <obj_property name="ElementShortName">z</obj_property>
+      <obj_property name="ObjectShortName">z</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapathTester/p" type="logic">
+      <obj_property name="ElementShortName">p</obj_property>
+      <obj_property name="ObjectShortName">p</obj_property>
+   </wvobject>
+</wave_config>

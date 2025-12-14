@@ -1,0 +1,253 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu Oct 16 11:37:14 2025
+# Process ID         : 27072
+# Current directory  : C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent9708 C:\Users\fallo\Desktop\CECS 440\Lab 5\Lab5\Lab5.xpr
+# Log file           : C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/vivado.log
+# Journal file       : C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5\vivado.jou
+# Running On         : S340
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : AMD Ryzen 7 7800X3D 8-Core Processor           
+# CPU Frequency      : 4192 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33411 MB
+# Swap memory        : 10737 MB
+# Total Virtual      : 44149 MB
+# Available Virtual  : 16185 MB
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.xpr}
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at E:/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at E:/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at E:/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Vivado/2024.2/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 1587.695 ; gain = 357.629
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'datapathTester'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'datapathTester' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj datapathTester_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/ALUout.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUout
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/design.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module ALUout
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ALUout' [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/ALUout.v:7]
+INFO: [VRFC 10-311] analyzing module alu
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'alu' [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/alu.v:8]
+INFO: [VRFC 10-311] analyzing module simple_datapath
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'regfile' [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v:7]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sim_1/new/testbench_skeleton.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module datapathTester
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot datapathTester_behav xil_defaultlib.datapathTester xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot datapathTester_behav xil_defaultlib.datapathTester xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.regfile(width=32)
+Compiling module xil_defaultlib.alu(width=32)
+Compiling module xil_defaultlib.ALUout(width=32)
+Compiling module xil_defaultlib.simple_datapath
+Compiling module xil_defaultlib.datapathTester
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot datapathTester_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "datapathTester_behav -key {Behavioral:sim_1:Functional:datapathTester} -tclbatch {datapathTester.tcl} -view {{C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/datapathTester_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config {C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/datapathTester_behav.wcfg}
+source datapathTester.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Registers Initialized!
+	Register	Content
+          0	0x00000000
+          1	0xffff0000
+          2	0x0a0a0a0a
+          3	0x000001f4
+          4	0x000003e8
+          5	0x00000005
+          6	0x00000006
+          7	0x00000007
+          8	0x00000008
+          9	0x00000009
+         10	0x0000000a
+         11	0x0000000b
+         12	0x0000000c
+         13	0x0000000d
+         14	0x0000000e
+         15	0x0000000f
+         16	0x00000010
+         17	0x00000011
+         18	0x00000012
+         19	0x00000013
+         20	0x00000014
+         21	0x00000015
+         22	0x00000016
+         23	0x00000017
+         24	0x00000018
+         25	0x00000019
+         26	0x0000001a
+         27	0x0000001b
+         28	0x0000001c
+         29	0x0000001d
+         30	0x0000001e
+         31	0x0000001f
+
+Checking test case
+srca =        500, srcb =       1000
+add $ALUout, $ 3, $ 4 performed
+sum =       1500
+test passed
+
+Checking test case
+srca =        500, srcb =       1000
+increment $ALUout, $ 3 performed
+d_out =        501
+test passed
+
+Checking test case
+srca = ffff0000, srcb = 0a0a0a0a
+and $ALUout, $ 1, $ 2 performed
+d_out = 0a0a0000
+test passed
+
+Checking test case
+srca = ffff0000, srcb = 0a0a0a0a
+or $ALUout, $ 1, $ 2 performed
+d_out = ffff0a0a
+test passed
+
+Checking test case
+srca = 0a0a0a0a, srcb = ffff0000
+xor $ALUout, $ 2, $ 1 performed
+d_out = f5f50a0a
+test passed
+
+Checking test case
+srca = 0a0a0a0a, srcb = ffff0000
+not $ALUout, $ 2 performed
+d_out = f5f5f5f5
+test passed
+
+Checking test case
+srca =       1000, srcb = 4294901760
+sll $ALUout, $ 4, performed
+d_out =       2000
+test passed
+
+Checking test case
+srca = 000003e8, srcb = ffff0000
+nop operation performed
+d_out = 00000000
+test passed
+$finish called at time : 146 ns : File "C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sim_1/new/testbench_skeleton.v" Line 120
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'datapathTester_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1661.160 ; gain = 8.055
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7vx485tffg1157-1
+Top: simple_datapath
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 5704
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2591.184 ; gain = 464.746
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'regfile' [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v:23]
+INFO: [Synth 8-9937] previous definition of design element 'regfile' is here [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v:23]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'ALUout' [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/ALUout.v:17]
+INFO: [Synth 8-9937] previous definition of design element 'ALUout' is here [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/ALUout.v:17]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'alu' [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/alu.v:36]
+INFO: [Synth 8-9937] previous definition of design element 'alu' is here [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/alu.v:36]
+INFO: [Synth 8-6157] synthesizing module 'simple_datapath' [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/design.v:13]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v:7]
+	Parameter width bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (0#1) [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/regfile.v:7]
+INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/alu.v:8]
+	Parameter width bound to: 32 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/alu.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/alu.v:8]
+INFO: [Synth 8-6157] synthesizing module 'ALUout' [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/ALUout.v:7]
+	Parameter width bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ALUout' (0#1) [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/ALUout.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'simple_datapath' (0#1) [C:/Users/fallo/Desktop/CECS 440/Lab 5/Lab5/Lab5.srcs/sources_1/new/design.v:13]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2695.992 ; gain = 569.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2695.992 ; gain = 569.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2695.992 ; gain = 569.555
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2695.992 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2756.449 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 3130.707 ; gain = 1004.270
+18 Infos, 0 Warnings, 3 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 3130.707 ; gain = 1469.547
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 16 11:43:14 2025...

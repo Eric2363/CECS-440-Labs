@@ -1,0 +1,359 @@
+alu.v
+================================================================================
+`timescale 1ns / 1ps
+//Class: CECS 440
+//Lab: 5
+//Name:  Eric Santana
+//ID: 015107467
+
+
+module alu # (parameter width = 8)
+(
+    input [width-1:0] a,b,
+    input [2:0] aluop,
+    output reg [width-1:0] y,
+    output reg c, n, z, p
+    );
+    
+always @ (a, b, aluop)
+    begin
+    {y,c,n,z,p} = 0;
+    case(aluop)
+        0: {c,y} = a +b;
+        1:{c,y} = a + 1;
+        2:y = a&b;
+        3:y = a|b;
+        4:y = a^b;
+        5:y = ~a;
+        6:{c,y} = a <<1;
+        7:y = 0;
+        default: y = 32'bz;
+     endcase
+     
+     n = y[width-1];
+     z = !y;
+     p = ^y;
+   end
+        
+endmodule
+
+ALUout.v
+================================================================================
+//Class: CECS 440
+//Lab: 5
+//Name:  Eric Santana
+//ID: 015107467
+
+
+module ALUout #(parameter width = 8)
+   (input clk, reset, load,
+    input [width - 1:0] d,
+    output reg [width - 1:0] q);
+    
+    always @(posedge clk)
+    begin
+        if(reset) q <= {width{1'b0}};
+        else if(load) q <= d;
+    end
+endmodule
+
+regfile.v
+================================================================================
+//Class: CECS 440
+//Lab: 5
+//Name:  Eric Santana
+//ID: 015107467
+
+
+module regfile #(parameter width = 8)
+   (input clk, 
+    input wr_en, // write enable
+    input [4:0] rd_addr1, rd_addr2, wr_addr, // rs, rt, rd
+    input [width - 1:0] wr_data, // d_in = data in
+    output [width - 1:0] rd_data1, rd_data2); // srca, srcb
+    
+reg [31:0] rf[31:0];
+
+
+always @(negedge clk)
+    if (wr_en) rf[wr_addr] <= wr_data;
+    
+assign rd_data1 = (rd_addr1 != 5'd0) ? rf[rd_addr1][width-1:0]:{width{1'b0}};
+assign rd_data2 = (rd_addr2 != 5'd0) ? rf[rd_addr2][width-1:0]:{width{1'b0}};
+
+endmodule
+
+design.v
+================================================================================
+
+//Class: CECS 440
+//Lab: 5
+//Name:  Eric Santana
+//ID: 015107467
+
+
+`include "regfile.v"
+`include "ALUout.v"
+`include "alu.v"
+
+`define datasize 32
+
+module simple_datapath 
+   (input [2:0] op_code,
+    input clk, reset,
+    input [4:0] rs, rt, rd,
+    input wr_en,
+    input [`datasize - 1:0] d_in,
+    output [`datasize - 1:0] d_out,
+    output c, n, z, p);
+    
+    wire [`datasize - 1:0] srca, srcb, aluout, aluout_y; // rfDataOut1, rfDataOut2
+    
+    regfile #(`datasize) rf 
+       (.clk(clk),
+        .wr_en(wr_en),
+        .rd_addr1(rs),
+        .rd_addr2(rt),
+        .wr_addr(rd),
+        .wr_data(d_in),
+        .rd_data1(srca),
+        .rd_data2(srcb)
+        ); // fill in the port list 
+        
+    alu #(`datasize) a1 
+       (.a(srca),
+        .b(srcb),
+        .aluop(op_code),
+        .y(aluout_y),
+        .c(c),
+        .n(n),
+        .z(z),
+        .p(p)
+         ); // fill in the port list
+    ALUout #(`datasize) ALUout 
+       (.clk(clk),
+        .reset(reset),
+        .load(1'b1),
+        .d(aluout_y),
+        .q(aluout)
+           );
+    assign d_out = aluout;
+endmodule
+
+testbench_skeleton.v
+================================================================================
+//Class: CECS 440
+//Lab: 5
+//Name:  Eric Santana
+//ID: 015107467
+
+
+module datapathTester();
+  reg [2:0] op_code;
+  reg clk, reset;
+  reg [4:0] rs, rt, rd;
+  reg wr_en;
+  reg [31:0] d_in;
+  wire [31:0] d_out;
+  wire c,n,z,p;
+  
+  integer i;
+  
+  simple_datapath dut 
+   (.op_code(op_code),
+    .clk(clk),
+    .reset(reset),
+    .rs(rs),
+    .rt(rt),
+    .rd(rd),
+    .wr_en(wr_en),
+    .d_in(d_in),
+    .d_out(d_out),
+    .c(c),
+    .n(n),
+    .z(z),
+    .p(p)
+    );
+
+  
+  always #5 clk = ~clk;
+  
+  initial begin
+    op_code = 0;
+    clk = 0;
+    {rs, rt, rd} = 0;
+    wr_en = 0;	
+    d_in = 0; 
+    
+    reset = 0;
+    #10;
+    reset = 1;
+    #10;
+    reset = 0;
+    #10;
+    
+    //load registers with values
+    dut.rf.rf[0] = 0;
+    dut.rf.rf[1] = 32'hFFFF0000;
+    dut.rf.rf[2] = 32'h0A0A0A0A;
+    dut.rf.rf[3] = 32'd500;
+    dut.rf.rf[4] = 32'd1000;
+    //load remaining registers with random values
+    for(i = 5; i < 32; i = i + 1)
+      begin
+        dut.rf.rf[i] = i;
+      end
+    
+    $display("Registers Initialized!");
+    showRegisterContents();
+    //perform ALU operations
+    //Test case 1: add $ALUout, $3, $4
+       @(negedge clk)
+    	op_code = 3'b000; 
+    	rs = 5'b00011; // 3
+    	rt = 5'b00100; // 4
+    @(posedge clk) #1
+    	checkOperation();
+    //Test case 2: inc $ALUout, $3
+    @(negedge clk)
+    	op_code = 3'b001;
+    	rs = 5'b00011; // 3
+    @(posedge clk) #1
+    	checkOperation();
+    //Test case 3: and $ALUout, $1, $2
+    @(negedge clk)
+    	op_code = 3'b010; 
+    	rs = 5'b00001; // 1
+    	rt = 5'b00010; // 2
+    @(posedge clk) #1
+    	checkOperation();
+    //Test case 4: or $ALUout, $1, $2
+    @(negedge clk)
+    	op_code = 3'b011;
+    	rs = 5'b00001; // 1
+    	rt = 5'b00010; // 2
+    @(posedge clk) #1
+    	checkOperation();
+    //Test case 5: xor $ALUout, $2, $1
+    @(negedge clk)
+    	op_code = 3'b100; 
+    	rs = 5'b00010; // 2
+    	rt = 5'b00001; // 1
+    @(posedge clk) #1
+    	checkOperation();
+    //Test case 6: not $ALUout, $2
+    @(negedge clk)
+    	op_code = 3'b101; 
+    	rs = 5'b00010; // 2
+    @(posedge clk) #1
+    	checkOperation();
+    //Test case 7: sl $ALUout, $4
+    @(negedge clk)
+    	op_code = 3'b110; 
+    	rs = 5'b00100; // 4
+    @(posedge clk) #1
+    	checkOperation();
+    //Test case 8: nop 
+    @(negedge clk)
+    	op_code = 3'b111;
+    @(posedge clk) #1
+    	checkOperation();
+
+    
+    
+    $finish;
+    
+    
+  end
+  
+  task showRegisterContents;
+    //look directly into the register file to see contents
+    begin
+      $display("\tRegister\tContent");
+    for(i = 0; i < 32; i = i + 1)
+      begin
+        #1 $display("%d\t0x%h", i, dut.rf.rf[i]);
+      end
+    end
+  endtask	//end of showRegisterContents task
+
+  task checkOperation;
+    begin
+      $display("\nChecking test case");
+      if(op_code == 0 || op_code == 1 || op_code == 6)
+        //display arithmetic operation values in decimal
+        $display("srca = %d, srcb = %d",dut.srca, dut.srcb);
+      else
+        //display logical operation values in hex
+        $display("srca = %h, srcb = %h",dut.srca, dut.srcb);
+      
+      case(op_code)
+        0: begin
+          $display("add $ALUout, $%d, $%d performed",rs,rt);
+          $display("sum = %d",d_out);
+          if(d_out == (dut.rf.rf[rs]+dut.rf.rf[rt])) begin
+            $display("test passed");
+          end
+          else begin
+            $display("Test Failed!!!");
+          end
+        end
+        1: begin
+          $display("increment $ALUout, $%d performed",rs);
+          $display("d_out = %d",d_out);
+          if(d_out == (dut.rf.rf[rs]+1))
+            $display("test passed");
+          else begin
+            $display("Test Failed!!!");
+          end
+        end
+        2: begin
+          $display("and $ALUout, $%d, $%d performed",rs,rt);
+          $display("d_out = %h",d_out);
+          if(d_out == (dut.rf.rf[rs]&dut.rf.rf[rt]))
+            $display("test passed");
+          else
+            $display("Test Failed!!!");
+        end
+        3: begin
+          $display("or $ALUout, $%d, $%d performed",rs,rt);
+          $display("d_out = %h",d_out);
+          if(d_out == (dut.rf.rf[rs]|dut.rf.rf[rt]))
+            $display("test passed");
+          else
+            $display("Test Failed!!!");
+        end
+        4: begin
+          $display("xor $ALUout, $%d, $%d performed",rs,rt);
+          $display("d_out = %h",d_out);
+          if(d_out == (dut.rf.rf[rs]^dut.rf.rf[rt]))
+            $display("test passed");
+          else
+            $display("Test Failed!!!");
+        end
+        5: begin	$display("not $ALUout, $%d performed",rs);
+          $display("d_out = %h",d_out);
+          if(d_out == (~dut.rf.rf[rs]))
+            $display("test passed");
+          else
+            $display("Test Failed!!!");
+            end
+        6: begin	$display("sll $ALUout, $%d, performed",rs);
+          $display("d_out = %d",d_out);
+          if(d_out == (dut.rf.rf[rs]*2))
+            $display("test passed");
+          else
+            $display("Test Failed!!!");
+            end
+        7: begin	$display("nop operation performed");
+          $display("d_out = %h",d_out);
+          if(!d_out)
+            $display("test passed");
+          else
+            $display("Test Failed!!!");
+        end
+        default: $display("ERROR: Invalid Operation!");
+      endcase
+    end
+  endtask	//end of checkOperation task
+endmodule
