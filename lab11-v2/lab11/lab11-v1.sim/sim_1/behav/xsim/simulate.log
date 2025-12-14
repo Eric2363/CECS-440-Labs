@@ -1,0 +1,10 @@
+Time resolution is 1 ps
+Control Signals for test case 0: 1000010011
+Control Signals for test case 1: 1000110011
+Control Signals for test case 2: 1000111011
+Control Signals for test case 3: 0x011100x0
+Control Signals for test case 4: 1100010101
+Control Signals for test case 5: 0x100101x0
+Control Signals for test case 6: 1000000011
+Control Signals for test case 7: 1000001011
+$finish called at time : 86 ns : File "C:/Users/fallo/Desktop/lab11-v1/lab11/lab11-v1.srcs/sim_1/new/design_tb.v" Line 87
